@@ -5,7 +5,7 @@ export default class BaseSchema {
     this.checks = [];
   }
 
-  test = (validatorName, ...args) => {
+  test(validatorName, ...args) {
     const validate = this.validators[validatorName];
 
     if (validatorName === 'required') {
@@ -15,13 +15,13 @@ export default class BaseSchema {
     this.checks.push({ validate, args });
 
     return this;
-  };
+  }
 
-  isValid = (data) => {
+  isValid(data) {
     if (data === null && !this.requiredValue) {
       return true;
     }
 
     return this.checks.every(({ validate, args }) => validate(data, ...args));
-  };
+  }
 }

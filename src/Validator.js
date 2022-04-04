@@ -13,19 +13,27 @@ export default class Validator {
     };
   }
 
-  addValidator = (type, name, fn) => {
+  addValidator(type, name, fn) {
     if (!(type in this.validatorsByTypes)) {
       throw new Error(`Unsupported schema type: ${type}`);
     }
 
     this.validatorsByTypes[type][name] = fn;
-  };
+  }
 
-  string = () => new StringSchema(this.validatorsByTypes.string);
+  string() {
+    return new StringSchema(this.validatorsByTypes.string);
+  }
 
-  number = () => new NumberSchema(this.validatorsByTypes.number);
+  number() {
+    return new NumberSchema(this.validatorsByTypes.number);
+  }
 
-  array = () => new ArraySchema(this.validatorsByTypes.array);
+  array() {
+    return new ArraySchema(this.validatorsByTypes.array);
+  }
 
-  object = () => new ObjectSchema(this.validatorsByTypes.object);
+  object() {
+    return new ObjectSchema(this.validatorsByTypes.object);
+  }
 }
