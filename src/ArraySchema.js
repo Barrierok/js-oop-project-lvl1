@@ -1,4 +1,4 @@
-import BaseSchema from './BaseSchema.js';
+import BaseSchema from './BaseSchema';
 
 export default class ArraySchema extends BaseSchema {
   required() {

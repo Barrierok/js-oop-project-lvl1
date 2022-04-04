@@ -1,7 +1,7 @@
-import StringSchema, { defaultValidators as string } from './StringSchema.js';
-import NumberSchema, { defaultValidators as number } from './NumberSchema.js';
-import ArraySchema, { defaultValidators as array } from './ArraySchema.js';
-import ObjectSchema, { defaultValidators as object } from './ObjectSchema.js';
+import StringSchema, { defaultValidators as string } from './StringSchema';
+import NumberSchema, { defaultValidators as number } from './NumberSchema';
+import ArraySchema, { defaultValidators as array } from './ArraySchema';
+import ObjectSchema, { defaultValidators as object } from './ObjectSchema';
 
 export default class Validator {
   constructor() {
